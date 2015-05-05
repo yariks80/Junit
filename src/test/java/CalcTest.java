@@ -5,7 +5,7 @@ import org.junit.runners.JUnit4;
 
 import static org.junit.Assert.*;
 
-@Category(AcceptanceTest.class)
+ @Category(AcceptanceTest.class)
 public class CalcTest {
 
     @Test
