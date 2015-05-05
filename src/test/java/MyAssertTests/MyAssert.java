@@ -1,6 +1,9 @@
 package MyAssertTests;
 
 import org.apache.http.util.Asserts;
+import org.hamcrest.BaseMatcher;
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
 import org.hamcrest.core.CombinableMatcher;
 import org.junit.Test;
 
@@ -18,6 +21,7 @@ public class MyAssert {
      The parameter order is expected value followed by actual value.Optionally the first parameter can be a String message that is output on failure.
      http://junit.org/apidocs/org/junit/Assert.html
      */
+
     @Test
     public void testAssertArrayEquals() {
         byte[] expected = "trial".getBytes();
@@ -55,6 +59,11 @@ public class MyAssert {
         Integer aNumber = Integer.valueOf(768);
        assertSame("should be same", aNumber, aNumber);
     }
+    @Test
+    public void testAssertTrue() {
+        assertTrue("failure - should be true", true);
+
+    }
 
     // JUnit Matchers assertThat
     //http://tutorials.jenkov.com/java-unit-testing/matchers.html
@@ -83,8 +92,26 @@ public class MyAssert {
 
         assertThat("this string", is("this string"));
         assertThat(123, is(123));
-        //Chaining Matchers
+         //Chaining Matchers
         assertThat(123, not( is(345) ) );
+
+                /*Core Matchers
+        Core
+            any() 	Matches anything
+            is() 	A matcher that checks if the given objects are equal.
+            describedAs() 	Adds a descrption to a Matcher
+        Logical
+            allOf() 	Takes an array of matchers, and all matchers must match the target object.
+            anyOf() 	Takes an array of matchers, and at least one of the matchers must report that it matches the target object.
+            not() 	Negates the output of the previous matcher.
+        Object
+            equalTo() 	A matcher that checks if the given objects are equal.
+            instanceOf() 	Checks if the given object is of type X or is compatible with type X
+            notNullValue() +
+            nullValue() 	Tests whether the given object is null or not null.
+            sameInstance() 	Tests if the given object is the exact same instance as another.
+                 */
+
         assertThat("good", allOf(equalTo("good"), startsWith("good")));
         assertThat("good", not(allOf(equalTo("bad"), equalTo("good"))));
         assertThat("good", anyOf(equalTo("bad"), equalTo("good")));
@@ -93,10 +120,6 @@ public class MyAssert {
 
     }
 
-    @Test
-    public void testAssertTrue() {
-        org.junit.Assert.assertTrue("failure - should be true", true);
 
-    }
 }
 
