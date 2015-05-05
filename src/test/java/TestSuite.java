@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Suite.class)
 @Categories.IncludeCategory(AcceptanceTest.class)
+@Categories.ExcludeCategory(ExcludeTest.class)
 @Suite.SuiteClasses(value = {CalcTest.class ,Test_a.class })
 public class TestSuite {
 }

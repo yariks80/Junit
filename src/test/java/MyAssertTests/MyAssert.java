@@ -67,6 +67,8 @@ public class MyAssert {
 
     // JUnit Matchers assertThat
     //http://tutorials.jenkov.com/java-unit-testing/matchers.html
+   // https://code.google.com/p/hamcrest/wiki/Tutorial
+    //https://github.com/hamcrest/JavaHamcrest
 
     @Test
     public void testAssertThatBothContainsString() {

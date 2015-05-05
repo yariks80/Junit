@@ -7,7 +7,16 @@
     <groupId>com.epam.junit</groupId>
     <artifactId>junit-practic</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <groups>TestSuite.class</groups>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 <dependencies>
     <dependency>
         <groupId>junit</groupId>

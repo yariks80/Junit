@@ -18,7 +18,9 @@ import java.util.Collection;
 public class WebDriverBaseClass {
 
 	private String url;
+
 	protected static WebDriver driver;
+
 	public WebDriverBaseClass(String url) {
 		this.url = url;
 	}
@@ -31,7 +33,7 @@ public class WebDriverBaseClass {
 	public static void startBrowser() {
     driver = WebDriverFactory.getWebDRiverInstance();
 	}
-   // @Ignore
+
 	@Ignore
 	@Test
 	public void testweb() throws InterruptedException {
