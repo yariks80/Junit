@@ -9,7 +9,7 @@ public class Test_a {
    @BeforeClass
    public static void setUpClass() throws Exception {
         System.out.println("Before Class");
-        Assert.assertTrue(true);
+        Assert.assertTrue(false);
     }
 
     @AfterClass
